@@ -55,42 +55,135 @@ const Portfolio = () => {
     }
   };
 
-
   const skills = {
-    Languages: ['Java', 'JavaScript', 'TypeScript'],
-    Frontend: ['React', 'Tailwind CSS', 'HTML5', 'CSS3', 'Nextjs'],
-    Backend: ['Node.js', 'Express.js', 'REST APIs'],
-    Database: ['MongoDB', 'MySQL'],
-    Tools: ['Git', 'Github', 'VS Code', 'Postman'],
+    Languages: [
+      'Java',
+      'JavaScript',
+      'TypeScript',
+      'SQL',
+      'HTML5',
+      'CSS3',
+    ],
+
+    Frontend: [
+      'React',
+      'Next.js',
+      'Tailwind CSS',
+      'ShadCN UI',
+      'Redux',
+      'Zustand',
+      'React Router',
+      'Vite',
+    ],
+
+    Backend: [
+      'Spring Boot',
+      'Spring Security',
+      'Node.js',
+      'Express.js',
+      'REST APIs',
+      'JWT Authentication',
+      'WebSockets (STOMP & SockJS)',
+      'JPA / Hibernate',
+    ],
+
+    Database: [
+      'MongoDB',
+      'MySQL',
+      'PostgreSQL',
+    ],
+
+    DevOps: [
+      'Docker',
+      'Git',
+      'GitHub',
+    ],
+
+    Tools: [
+      'VS Code',
+      'IntelliJ IDEA',
+      'Eclipse',
+      'Postman',
+      'MongoDB Atlas',
+      'Maven',
+      'npm',
+    ],
   };
 
   const skillLogos = {
+    // Languages
+    Java: 'https://skillicons.dev/icons?i=java',
     JavaScript: 'https://skillicons.dev/icons?i=js',
     TypeScript: 'https://skillicons.dev/icons?i=ts',
-    Java: 'https://skillicons.dev/icons?i=java',
-
-    React: 'https://skillicons.dev/icons?i=react',
-    Nextjs: 'https://skillicons.dev/icons?i=nextjs',
-    'Tailwind CSS': 'https://skillicons.dev/icons?i=tailwind',
+    SQL: 'https://skillicons.dev/icons?i=mysql',
     HTML5: 'https://skillicons.dev/icons?i=html',
     CSS3: 'https://skillicons.dev/icons?i=css',
 
+    // Frontend
+    React: 'https://skillicons.dev/icons?i=react',
+    'Next.js': 'https://skillicons.dev/icons?i=nextjs',
+    'Tailwind CSS': 'https://skillicons.dev/icons?i=tailwind',
+    'ShadCN UI': '', // No official Skill Icon
+    Redux: 'https://skillicons.dev/icons?i=redux',
+    Zustand: '', // No official Skill Icon
+    'React Router': '', // No official Skill Icon
+    Vite: 'https://skillicons.dev/icons?i=vite',
+
+    // Backend
+    'Spring Boot': 'https://skillicons.dev/icons?i=spring',
+    'Spring Security': 'https://skillicons.dev/icons?i=spring',
     'Node.js': 'https://skillicons.dev/icons?i=nodejs',
     'Express.js': 'https://skillicons.dev/icons?i=express',
-    FastAPI: '',// Not available on Skillicons
     'REST APIs': '',
+    'JWT Authentication': '',
+    'WebSockets (STOMP & SockJS)': '',
+    'JPA / Hibernate': 'https://skillicons.dev/icons?i=hibernate',
 
+    // Database
     MongoDB: 'https://skillicons.dev/icons?i=mongodb',
     MySQL: 'https://skillicons.dev/icons?i=mysql',
-    Redis: 'https://skillicons.dev/icons?i=redis',
+    PostgreSQL: 'https://skillicons.dev/icons?i=postgres',
 
+    // DevOps
+    Docker: 'https://skillicons.dev/icons?i=docker',
     Git: 'https://skillicons.dev/icons?i=git',
+    GitHub: 'https://skillicons.dev/icons?i=github',
+
+    // Tools
     'VS Code': 'https://skillicons.dev/icons?i=vscode',
+    'IntelliJ IDEA': 'https://skillicons.dev/icons?i=idea',
+    Eclipse: 'https://skillicons.dev/icons?i=eclipse',
     Postman: 'https://skillicons.dev/icons?i=postman',
+    Maven: 'https://skillicons.dev/icons?i=maven',
+    npm: 'https://skillicons.dev/icons?i=npm',
+    'MongoDB Atlas': 'https://skillicons.dev/icons?i=mongodb',
   };
 
 
   const projects = [
+    {
+      title: 'RoadRescue – On-Road Vehicle Breakdown Assistance',
+      description:
+        'A full-stack roadside assistance platform that enables users to request emergency vehicle support, locate nearby mechanics using interactive maps, and track service requests with real-time status updates. Features secure authentication, role-based access, REST APIs, WebSocket-based live notifications, and location-aware service management for faster roadside assistance.',
+      tech: [
+        'React',
+        'Spring Boot',
+        'Spring Security',
+        'Java',
+        'JPA / Hibernate',
+        'MySQL',
+        'REST APIs',
+        'WebSockets',
+        'STOMP',
+        'SockJS',
+        'Leaflet Maps',
+        'OpenStreetMap',
+        'TailwindCSS'
+      ],
+      github: 'https://github.com/SHAIK-SHAREEF123/on-road-vehicle-breakdown-assistance',
+      demo: 'https://road-rescue-rho.vercel.app/',
+      image: '/api/placeholder/400/250'
+    },
     {
       title: 'AI-powered Web IDE',
       description: 'AI-powered web IDE that allows users to write, edit, and execute code in the browser with real-time preview and intelligent AI assistance for code generation and debugging.',
@@ -302,8 +395,8 @@ const Portfolio = () => {
                 <button
                   onClick={() => scrollToSection('contact')}
                   className={`group relative px-6 py-3 sm:px-8 sm:py-4 border-2 rounded-lg font-semibold overflow-hidden transform hover:-translate-y-1 transition-all duration-300 focus-visible:outline focus-visible:outline-2 ${darkMode
-                      ? 'border-purple-500 text-purple-400 hover:text-white'
-                      : 'border-purple-600 text-purple-600 hover:text-white'
+                    ? 'border-purple-500 text-purple-400 hover:text-white'
+                    : 'border-purple-600 text-purple-600 hover:text-white'
                     }`}
                 >
                   <span className="relative z-10">Contact Me</span>
@@ -499,24 +592,28 @@ const Portfolio = () => {
       <section id="achievements" className={`py-20 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className={`text-4xl font-bold text-center mb-16 ${darkMode ? 'text-white' : 'text-gray-900'}`}>
-            Achievements & Certifications
+            Achievements & Highlights
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              // { title: 'HackTheCode Winner', desc: 'First place in college hackathon', icon: Award },
-              // { title: 'ReactJS Certified', desc: 'Infosys Springboard ReactJS Certification', icon: Award },
-              // { title: 'LeetCode 500+', desc: 'Solved 500+ coding problems', icon: Code },
-              // { title: 'Open Source Contributor', desc: 'Contributed to 5+ projects', icon: Github },
-              // { title: 'Tech Talk Speaker', desc: 'Spoke about React at local meetup', icon: Globe },
-              // { title: 'AWS Cloud Practitioner', desc: 'AWS Certified Cloud Practitioner', icon: Award },
-              { title: 'LeetCode 400+', desc: 'Solved 400+ coding problems on LeetCode', icon: Code },
+              {
+                title: 'DSA Enthusiast',
+                desc: 'Solved 500+ Data Structures and Algorithms problems across LeetCode, HackerRank, and other coding platforms.',
+                icon: Code,
+                link: 'https://leetcode.com/u/SHAIK__SHAREEF/',
+                linkText: 'View LeetCode Profile'
+              },
+              {
+                title: 'Spring Boot Certification',
+                desc: 'Successfully completed Spring Boot certification covering REST APIs, Spring Security, JPA/Hibernate, and backend application development.',
+                icon: Award,
+                certificate: 'https://drive.google.com/file/d/16BGuIbeM4lFOsGTdlD5m3MGvO4cNJkj4/view?usp=drivesdk'
+              },
               {
                 title: 'District Table Tennis Player',
-                desc: 'Represented Anantapur district in table tennis competitions and participated at district-level tournaments',
+                desc: 'Represented Anantapur district in table tennis competitions and participated in district-level tournaments.',
                 icon: Trophy
-              },
-
-
+              }
             ].map((achievement, index) => (
               <div key={index} className={`p-6 rounded-lg ${darkMode ? 'bg-gray-700' : 'bg-white'} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}>
                 <achievement.icon className="w-8 h-8 text-purple-500 mb-4" />
@@ -526,6 +623,27 @@ const Portfolio = () => {
                 <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                   {achievement.desc}
                 </p>
+                {achievement.link && (
+                  <a
+                    href={achievement.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-3 text-purple-500 hover:text-purple-600 font-medium text-sm"
+                  >
+                    {achievement.linkText} →
+                  </a>
+                )}
+                
+                {achievement.certificate && (
+                  <a
+                    href={achievement.certificate}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-3 text-purple-500 hover:text-purple-600 font-medium text-sm"
+                  >
+                    View Certificate →
+                  </a>
+                )}
               </div>
             ))}
           </div>
@@ -610,7 +728,7 @@ const Portfolio = () => {
           </p>
 
           <a
-            href="/Shareef_Resume4.pdf" // this assumes it's in the public folder
+            href="/Shareef_ResumeJ.pdf" // this assumes it's in the public folder
             download
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
           >
